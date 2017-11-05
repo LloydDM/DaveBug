@@ -1,0 +1,115 @@
+/************************
+**** PROJECTS COLUMN ****
+************************/
+
+#projects {
+  /* Size and Position */
+  display: flex;
+  flex: 0 1 15%;
+  flex-direction: column;
+  height: 100%;
+  padding: 4px;
+
+  /* Styling */
+  background-color: #222;
+  border-right: 3px solid #444;
+  color: #bbb;
+}
+
+
+#add-project-button {
+  /* Size and Position */
+  display: inline;
+  float: right;
+  height: 30px;
+  margin-right: 3px;
+  width: 30px;
+
+  /* Styling */
+  background-color: #373;
+  border-radius: 15px;
+  box-shadow: 0px 0px 8px black;
+  font-size: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+
+#add-project-button:hover {
+  /* Styling */
+  box-shadow: 0px 0px 8px white inset, 0px 0px 8px black;
+}
+
+#archive-project-button {
+  /* Size and Position */
+  display: inline;
+  float: right;
+  height: 30px;
+  width: 30px;
+  margin-right: 3px;
+
+  /* Styling */
+  background-color: #733;
+  border-radius: 15px;
+  box-shadow: 0px 0px 8px black;
+  font-size: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+
+#archive-project-button:hover {
+  /* Styling */
+  box-shadow: 0px 0px 8px white inset, 0px 0px 8px black;
+}
+
+#project-list {
+  /* Size and Position */
+  flex: 0 1 96%;
+  margin-top: 3px;
+  width: 100%;
+
+  /* Styling */
+  overflow-y: auto;
+  background-color: #222;
+}
+
+.project-item {
+  /* Size and Position */
+  height: 50px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: auto;
+
+  /* Styling */
+  background-color: #33333b;
+  border-radius: 7px;
+  box-shadow: 0px 0px 15px black;
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 2px 2px 6px black;
+  white-space: nowrap;
+}
+
+.project-item:hover {
+  /* Styling */
+  box-shadow: 0px 0px 15px white inset, 0px 0px 15px black;
+}
+
+.project-item:first-of-type {
+  /* Size and Position */
+  margin-top: 15px;
+
+  /* Styling */
+}
+
+.project-item:last-of-type {
+  /* Size and Position */
+  margin-bottom: 15px;
+
+  /* Styling */
+}

@@ -1,0 +1,14 @@
+/*******************
+**** BUG COLUMN ****
+*******************/
+
+#bug {
+  /* Size and Position */
+  flex: 0 1 60%;
+  height: 100%;
+  padding: 3px;
+  
+  /* Styling */
+  overflow-y: auto;
+  
+}

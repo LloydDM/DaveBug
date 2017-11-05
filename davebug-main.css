@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+  /*border: 1px dotted red;*/
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0px 0px 2px #222;
+  border-radius: 3px;
+  background-color: #333;
+}
+
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 0px 0px 2px #333;
+  border-radius: 3px;
+  background-color: #bbb;
+}
+
+body {
+  /* Size and Position */
+  height: 100vh;
+  margin: 0;
+
+  /* Styling */
+  font-family: Inconsolata, monospace;
+}
+
+#header {
+  /* Size and Position */
+  display: block;
+  height: 5%;
+  padding: 3px;
+  width: 100%;
+
+  /* Styling */
+  background-color: #444;
+  color: #bbb;
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 42px;
+}
+
+#interface {
+  /* Size and Position */
+  display: flex;
+  height: 95%;
+  position: relative;
+  width: 100%;
+
+  /* Styling */
+  background-color: #222;
+  color: #bbb;
+}
+
+.column-header {
+  /* Size and Position */
+  flex: 0 1 4%;
+  width: 100%;
+
+  /* Styling */
+  border-bottom: 3px solid #444;
+}
+
+.column-header-text {
+  /* Size and Position */
+  /* Styling */
+  font-size: 30px;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px black;
+}
+
+.button {
+  /* Size and Position */
+  /* Styling */
+  cursor: pointer;
+}

@@ -1,0 +1,16 @@
+{
+  "bug_id": int,
+  "bug_title": string,
+  "bug_status": string,
+  "bug_created_date": datetime,
+  "bug_created_by": string,
+  "bug_severity": string,
+  "bug_priority": string,
+  "bug_resolution": string,
+  "bug_description": htmlstring,
+  "bug_reproduction_steps": array[htmlString],
+  "bug_observed_results": htmlString,
+  "bug_expected_results": htmlString,
+  "bug_notes": htmlString,
+  "bug_comments": array[object comment]
+}
