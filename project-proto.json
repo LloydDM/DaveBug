@@ -3,6 +3,6 @@
   "project_name": string,
   "project_created_date": datetime,
   "project_created_by": string,
-  "project_bugs": array[int bug_id],
+  "project_bugs": array[int unique_id],
   "project_isArchived": bool
 }

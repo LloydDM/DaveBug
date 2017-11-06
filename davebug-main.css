@@ -45,9 +45,10 @@ body {
 
 #interface {
   /* Size and Position */
-  display: flex;
+  display: inline-block;
   height: 95%;
-  position: relative;
+  position: absolute;
+  top: 5%;
   width: 100%;
 
   /* Styling */
@@ -57,7 +58,7 @@ body {
 
 .column-header {
   /* Size and Position */
-  flex: 0 1 4%;
+  height: 36px;
   width: 100%;
 
   /* Styling */
@@ -69,11 +70,19 @@ body {
   /* Styling */
   font-size: 30px;
   font-weight: bold;
-  text-shadow: 2px 2px 6px black;
 }
 
 .button {
   /* Size and Position */
   /* Styling */
   cursor: pointer;
+}
+
+.rect-button:hover {
+  /* Size and Position */
+  padding-right: 3px;
+
+  /* Styling */
+  border-right: 7px solid #bbb;
+  transition: all 0.2s ease;
 }

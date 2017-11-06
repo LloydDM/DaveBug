@@ -4,11 +4,13 @@
 
 #bug {
   /* Size and Position */
-  flex: 0 1 60%;
+  display: inline-block;
   height: 100%;
+  left: 40%;
   padding: 3px;
-  
+  position: absolute;
+  width: 60%;
+
   /* Styling */
-  overflow-y: auto;
-  
+  overflow-y: auto; 
 }
