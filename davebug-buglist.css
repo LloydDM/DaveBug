@@ -15,15 +15,101 @@
   border-right: 3px solid #444;
 }
 
+#buglist-filters {
+  /* Size and Position */
+  display: inline-block;
+  height: 36px;
+  padding: 3px;
+  width: 100%;
+
+  /* Styling */
+  border-bottom: 3px solid #444;
+}
+
+.filter-button {
+  /* Size and Position */
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  height: 27px;
+  line-height: 27px;
+  padding-left: 3px;
+  padding-right: 3px;
+  /* Styling */
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#buglist-filter-all-button {
+  /* Size and Position */
+  
+  /* Styling */
+  background-color: #33333b;
+}
+
+#buglist-filter-all-button:hover {
+  /* Size and Position */
+  
+  /* Styling */
+  background-color: #bbb;
+  color: #33333b;
+}
+
+#buglist-filter-open-button {
+  /* Size and Position */
+  
+  /* Styling */
+  background-color: #533;
+}
+
+#buglist-filter-open-button:hover {
+  /* Size and Position */
+  
+  /* Styling */
+  background-color: #bbb;
+  color: #533;
+}
+
+#buglist-filter-closed-button {
+  /* Size and Position */
+  
+  /* Styling */
+  background-color: #353;
+}
+
+#buglist-filter-closed-button:hover {
+  /* Size and Position */
+  
+  /* Styling */
+  background-color: #bbb;
+  color: #353;
+}
+
+#buglist-filter-advanced-button {
+  /* Size and Position */
+  float: right;
+  /* Styling */
+  background-color: #33333b;
+}
+
+#buglist-filter-advanced-button:hover {
+  /* Size and Position */
+  
+  /* Styling */
+  background-color: #bbb;
+  color: #33333b;
+}
+
 #buglist-list {
   /* Size and Position */
   display: inline-block;
-  height: 94%;
+  height: 89%;
   margin-top: 3px;
   padding-left: 10px;
   padding-right: 10px;
   position: absolute;
-  top: 5%;
+  top: 9%;
   width: 98%;
   
   /* Styling */
@@ -85,10 +171,12 @@
   /* Size and Position */
   display: inline-block;
   height: 26px;
+  padding: 0 3px;
   width: 100%;
 
   /* Styling */
   border-bottom: 1px solid #bbb;
+  border-radius: 2px;
   font-size: 1.3em;
   font-weight: bold;
 }
@@ -112,6 +200,8 @@
   padding: 5px;
 
   /* Styling */
+  background-color: #33333b;
+  border-radius: 3px;
   font-size: 1.2rem;
   overflow-y: auto;
 }
@@ -133,4 +223,30 @@
   padding-right: 3px;
   /* Styling */
   border-right: 7px solid #bbb;
+}
+
+.open-showstopper {
+  /* Size and Position */
+  
+  /* Styling */
+  background: repeating-linear-gradient(
+    -45deg,
+    yellow,
+    yellow 20px,
+    black 20px,
+    black 40px
+    );
+}
+
+.closed-showstopper {
+  /* Size and Position */
+  
+  /* Styling */
+  background: repeating-linear-gradient(
+    -45deg,
+    #220,
+    #220 20px,
+    black 20px,
+    black 40px
+    );
 }
