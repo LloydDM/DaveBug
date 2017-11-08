@@ -7,10 +7,97 @@
   display: inline-block;
   height: 100%;
   left: 40%;
-  padding: 3px;
+  padding: 4px;
   position: absolute;
   width: 60%;
 
   /* Styling */
   overflow-y: auto; 
+}
+
+#bug-container {
+  /* Size and Position */
+  display: inline-block;
+  height: 94%;
+  margin-top: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: absolute;
+  top: 5%;
+  width: 99%;
+  /* Styling */
+  
+}
+
+#bug-info {
+  /* Size and Position */
+  display: inline-block;
+  height: 100%;
+  position: absolute;
+  width: 73%;
+  /* Styling */
+  overflow-y: auto;
+}
+
+#bug-title {
+  /* Size and Position */
+  display: inline-block;
+  /*height: 40px;*/
+  max-height: 80px;
+  /* Styling */
+  border-bottom: 3px solid #bbb;
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 38px;
+  overflow-y: auto;
+}
+
+#bug-description {
+  /* Size and Position */
+  margin-top: 10px;
+  max-height: 160px;
+  /* Styling */
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#bug-description-text {
+  /* Size and Position */
+  margin: 10px 0 0 10px;
+  max-height: 129px;
+  /* Styling */
+  font-weight: normal;
+  overflow-y: auto;
+}
+
+#bug-reprosteps {
+  /* Size and Position */
+  margin-top: 10px;
+  /* Styling */
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#bug-reprosteps-text {
+  /* Size and Position */
+  
+  /* Styling */
+  font-weight: normal;
+}
+
+#bug-reprosteps-text > ol {
+  /* Size and Position */
+  margin: 10px 0;
+  /* Styling */
+}
+
+#bug-metadata {
+  /* Size and Position */
+  display: inline-block;
+  left: 75%;
+  height: 100%;
+  position: absolute;
+  width: 25%;
+  /* Styling */
+  
 }
