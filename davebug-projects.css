@@ -12,7 +12,6 @@
   width: 15%;
 
   /* Styling */
-  background-color: #222;
   border-right: 3px solid #444;
 }
 
@@ -28,7 +27,6 @@
   width: 97%;
 
   /* Styling */
-  background-color: #222;
   overflow-y: auto;
 }
 

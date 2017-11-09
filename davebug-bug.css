@@ -34,7 +34,7 @@
   display: inline-block;
   height: 100%;
   position: absolute;
-  width: 73%;
+  width: 73.5%;
   /* Styling */
   overflow-y: auto;
 }
@@ -54,7 +54,7 @@
 
 #bug-description {
   /* Size and Position */
-  margin-top: 10px;
+  margin: 10px 5px 0 0;
   max-height: 160px;
   /* Styling */
   font-size: 20px;
@@ -64,7 +64,7 @@
 #bug-description-text {
   /* Size and Position */
   margin: 10px 0 0 10px;
-  max-height: 129px;
+  max-height: 127px;
   /* Styling */
   font-weight: normal;
   overflow-y: auto;
@@ -72,7 +72,7 @@
 
 #bug-reprosteps {
   /* Size and Position */
-  margin-top: 10px;
+  margin: 10px 5px 0 0;
   /* Styling */
   font-size: 20px;
   font-weight: bold;
@@ -80,7 +80,7 @@
 
 #bug-reprosteps-text {
   /* Size and Position */
-  
+
   /* Styling */
   font-weight: normal;
 }
@@ -91,13 +91,127 @@
   /* Styling */
 }
 
+#bug-observed {
+  /* Size and Position */
+  margin: 10px 5px 0 0;
+  max-height: 160px;
+  /* Styling */
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#bug-observed-text {
+  /* Size and Position */
+  margin: 10px 0 0 10px;
+  max-height: 127px;
+  /* Styling */
+  font-weight: normal;
+  overflow-y: auto;
+}
+
+#bug-expected {
+  /* Size and Position */
+  margin: 10px 5px 0 0;
+  max-height: 160px;
+  /* Styling */
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#bug-expected-text {
+  /* Size and Position */
+  margin: 10px 0 0 10px;
+  max-height: 127px;
+  /* Styling */
+  font-weight: normal;
+  overflow-y: auto;
+}
+
+#bug-notes {
+  /* Size and Position */
+  margin: 10px 5px 0 0;
+  /* Styling */
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#bug-notes-text {
+  /* Size and Position */
+
+  /* Styling */
+  font-weight: normal;
+}
+
+#bug-notes-text > ol {
+  /* Size and Position */
+  margin: 10px 0;
+  /* Styling */
+}
+
+#bug-attachments {
+  /* Size and Position */
+  margin: 10px 5px 0 0;
+  /* Styling */
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#bug-attachments-text {
+  /* Size and Position */
+
+  /* Styling */
+  font-weight: normal;
+}
+
+#bug-attachments-text > ol {
+  /* Size and Position */
+  margin: 10px 0;
+  /* Styling */
+}
+
+#bug-comments {
+  /* Size and Position */
+  margin: 10px 5px 0 0;
+  max-height: 160px;
+  /* Styling */
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#bug-comments-text {
+  /* Size and Position */
+  margin: 10px 0 0 10px;
+  max-height: 127px;
+  /* Styling */
+  font-weight: normal;
+  overflow-y: auto;
+}
+
 #bug-metadata {
   /* Size and Position */
-  display: inline-block;
   left: 75%;
   height: 100%;
+  padding-left: 5px;
   position: absolute;
   width: 25%;
   /* Styling */
-  
+  /*border-left: 1px solid #bbb;*/
+  font-size: 20px;
+}
+
+.metadata {
+  /* Size and Position */
+  display: inline-block;
+  margin-bottom: 15px;
+  width: 99%;  
+  /* Styling */
+  font-weight: bold;
+}
+
+.metadata-text {
+  /* Size and Position */
+  display: inline-block;
+  float: right;
+  /* Styling */
+  font-weight: normal;
 }

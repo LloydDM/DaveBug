@@ -4,7 +4,8 @@
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
+  height: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -52,7 +53,7 @@ body {
   width: 100%;
 
   /* Styling */
-  background-color: #222;
+  background-color: #111;
   color: #bbb;
 }
 
