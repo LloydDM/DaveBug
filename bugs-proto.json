@@ -12,7 +12,7 @@
     "bug_reproduction_steps": array[htmlString],    // Reproduction Steps is an array of one-line steps to reproduce the bug, ideally starting with "launch the application" or similar
     "bug_observed_results": htmlString,             // Observed Behavior describes the project's state after completing the Repro Steps
     "bug_expected_results": htmlString,             // Expected Results describes what is expected after completing the Repro Steps
-    "bug_notes": htmlString,                        // Notes includes any additional information, including info about other cases related to this bug
+    "bug_notes": array[htmlString],                        // Notes includes any additional information, including info about other cases related to this bug
     "bug_attachments": array[blob],                 // Attachments are things like screenshots, logfiles, etc.
     "bug_timeline": array[string],                  // Timeline is an array of actions taken by users, sorted by time
     "bug_comments": array[object comment]           // Comments are written by users as messages to each other regarding the current bug
