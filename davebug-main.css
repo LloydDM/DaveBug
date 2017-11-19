@@ -29,6 +29,16 @@ body {
   font-family: Inconsolata, monospace;
 }
 
+button {
+  /* Size and Position */
+  
+  /* Styling */
+  border: none;
+  color: #bbb;
+  font-family: Inconsolata, monospace;
+}
+
+
 #header {
   /* Size and Position */
   display: block;

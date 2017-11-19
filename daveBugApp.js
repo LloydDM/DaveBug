@@ -1,6 +1,7 @@
 var daveBugApp = angular.module("daveBugApp", []);
 
 daveBugApp.controller("bugListController", function($scope) {
+  $scope.statusSort = "";
   $scope.bugs = [
     {
       "bug_id": 00001,
@@ -91,23 +92,4 @@ daveBugApp.controller("bugListController", function($scope) {
       "bug_comments": []
     }
   ];
-  $scope.applyShowstopper = function(bug) {
-    if (bug.bug_severity === "Showstopper" && bug.bug_status === "Open") {
-      return "open-showstopper";
-    } else if (bug.bug_severity === "Showstopper" && bug.bug_status === "Closed") {
-      return "closed-showstopper";
-    } else {
-      return "";
-    }
-  };
-
-  $scope.applyStatus = function(bug) {
-    if (bug.bug_status === "Closed") {
-      return "closed-bug";
-    } else if (bug.bug_status === "Open") {
-      return "open-bug";
-    } else {
-      return "";
-    }
-  };
 });

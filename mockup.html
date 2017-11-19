@@ -44,15 +44,15 @@
             </div>
             
             <div id="buglist-filters">
-                <div id="buglist-filter-all-button" class="filter-button">ALL</div>
-                <div id="buglist-filter-open-button" class="filter-button">OPEN</div>
-                <div id="buglist-filter-closed-button" class="filter-button">CLOSED</div>
-                <div id="buglist-filter-advanced-button" class="filter-button">ADVANCED FILTERS</div>
+                <button id="buglist-filter-all-button" ng-click="statusSort = ''" class="filter-button">ALL</button>
+                <button id="buglist-filter-open-button" ng-click="statusSort = 'Open'" class="filter-button">OPEN</button>
+                <button id="buglist-filter-closed-button" ng-click="statusSort = 'Closed'" class="filter-button">CLOSED</button>
+                <button id="buglist-filter-advanced-button" class="filter-button">ADVANCED FILTERS</button>
             </div>
 
             <div id="buglist-list">
-                <div ng-repeat="bug in bugs" class="buglist-item button rect-button {{ applyShowstopper(bug) }}">
-                    <div class="buglist-item-tagline {{ applyStatus(bug) }}">
+                <div ng-repeat="bug in bugs | filter:{bug_status:statusSort}" class="buglist-item button rect-button" ng-class="{'open-showstopper': bug.bug_severity === 'Showstopper' && bug.bug_status === 'Open', 'closed-showstopper': bug.bug_severity === 'Showstopper' && bug.bug_status === 'Closed'}">
+                    <div class="buglist-item-tagline" ng-class="{'open-bug': bug.bug_status === 'Open', 'closed-bug': bug.bug_status === 'Closed'}">
                         <span class="buglist-item-id">{{ bug.bug_id }}</span>
                         <span class="buglist-item-date">{{ bug.bug_created_date | date }}</span>
                     </div>
