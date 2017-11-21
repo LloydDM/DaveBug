@@ -4,6 +4,9 @@ const path = require('path');
 
 const app = express();
 
+const hostname = '0.0.0.0';
+const port = process.env.DAVEBUG_PORT || 6462;
+
 app.use(express.static(path.join(__dirname, "./")));
 app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({
@@ -14,6 +17,6 @@ app.get('/', function(req, res) {
   res.sendFile('mockup.html', { root: path.join(__dirname, './') });
 });
 
-app.listen(6462, function() {
-  console.log('Listening on port 6462');
+app.listen(port, hostname, function() {
+  console.log("Server running at http://" + hostname + ":" + port + "/");
 });
