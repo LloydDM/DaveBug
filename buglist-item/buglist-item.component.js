@@ -4,7 +4,7 @@
   angular
     .module('buglistItem')
     .component('buglistItem', {
-      templateUrl: 'buglist-item.template.html',
+      templateUrl: 'buglist-item/buglist-item.template.html',
       controller: function BuglistItemContoller() {
         var self = this;
 
