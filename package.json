@@ -1,0 +1,23 @@
+{
+  "name": "davebug",
+  "version": "0.0.1",
+  "description": "A Bugtracker Made for Daves",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LloydDM/DaveBug.git"
+  },
+  "author": "David Lloyd",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LloydDM/DaveBug/issues"
+  },
+  "homepage": "https://github.com/LloydDM/DaveBug#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
+}
