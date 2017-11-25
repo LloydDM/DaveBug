@@ -14,13 +14,12 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
     
     <!-- JS Links -->
-    <script type="text/javascript" src="buglist-item/buglist-item.module.js"></script>
-    <script type="text/javascript" src="bug-service/bug-service.js"></script>
-    <script type="text/javascript" src="buglist-item/buglist-item.component.js"></script>
-    
+    <script type="text/javascript" src="core/davebug.module.js"></script>
+    <script type="text/javascript" src="buglist/buglist.directive.js"></script>
+    <script type="text/javascript" src="buglist/buglist.controller.js"></script>
 
 </head>
-<body>
+<body ng-app="davebug">
     <div id="header">
         DaveBUG
     </div>
@@ -53,17 +52,7 @@
                 </div>
             </div>
             
-            <div id="buglist-filters">
-                <!-- These need to be hooked back up to a filter var -->
-                <button id="buglist-filter-all-button" class="filter-button">ALL</button>
-                <button id="buglist-filter-open-button" class="filter-button">OPEN</button>
-                <button id="buglist-filter-closed-button" class="filter-button">CLOSED</button>
-                <button id="buglist-filter-advanced-button" class="filter-button">ADVANCED FILTERS</button>
-            </div>
-
-            <div id="buglist-list" ng-app="buglistItem">
-                <buglist-item></buglist-item>
-            </div>
+            <buglist ng-controller="BuglistController"></buglist>
         </div>
         
         <div id="bug">

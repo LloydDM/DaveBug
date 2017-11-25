@@ -1,7 +1,0 @@
-<div ng-repeat="bug in $ctrl.bugs" class="buglist-item button rect-button" ng-class="{'open-showstopper': bug.bug_severity === 'Showstopper' && bug.bug_status === 'Open', 'closed-showstopper': bug.bug_severity === 'Showstopper' && bug.bug_status === 'Closed'}">
-    <div class="buglist-item-tagline" ng-class="{'open-bug': bug.bug_status === 'Open', 'closed-bug': bug.bug_status === 'Closed'}">
-        <span class="buglist-item-id">{{ bug.bug_id }}</span>
-        <span class="buglist-item-date">{{ bug.bug_created_date | date }}</span>
-    </div>
-    <div class="buglist-item-title">{{ bug.bug_title }}</div>
-</div>

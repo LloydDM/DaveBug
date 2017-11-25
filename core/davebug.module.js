@@ -1,5 +1,5 @@
 (function () {
   'use strict';
 
-  angular.module('buglistItem', []);
+  angular.module('davebug', []);
 })();
