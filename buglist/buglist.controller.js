@@ -2,14 +2,30 @@
   'use strict';
 
   angular.module('davebug')
-    .controller('BuglistController', ['$scope', '$http',
-      function BuglistController($scope, $http) {
-        $scope.statusSort = '';
+    .controller('BuglistController', ['$scope', '$http', 'bugService',
+      function BuglistController($scope, $http, bugService) {
+        $scope.statusFilter = '';
         $scope.bugs = [];
 
-        $http.get('/json-data/list-of-bugs.json').then(function (response) {
-            $scope.bugs = response.data;
-        });
+        activate();
+
+        function activate() {
+          return getBugs().then(function() {
+              console.log('BuglistController activated');
+          });
+        }
+
+        function getBugs() {
+          return bugService.getBuglist().then(function(data) {
+            $scope.bugs = data;
+            return $scope.bugs;
+          });
+        }
+
+        $scope.setActive = function setActive() {
+          console.log('trying to call setActiveBug');
+          bugService.setActiveBug();
+        }
       }
     ]);
 })();

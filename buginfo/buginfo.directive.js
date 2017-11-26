@@ -2,10 +2,10 @@
   'use strict';
 
   angular.module('davebug')
-    .directive('buglist', function buglist() {
+    .directive('buginfo', function buginfo() {
       return {
         restrict: 'E',
-        templateUrl: "buglist/buglist.template.html"
+        templateUrl: 'buginfo/buginfo.template.html'
       };
     });
 })();

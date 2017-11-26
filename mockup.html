@@ -12,11 +12,15 @@
     
     <!-- Angular Link -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.js"></script>
     
     <!-- JS Links -->
     <script type="text/javascript" src="core/davebug.module.js"></script>
+    <script type="text/javascript" src="bug-service/bug-service.js"></script>
     <script type="text/javascript" src="buglist/buglist.directive.js"></script>
     <script type="text/javascript" src="buglist/buglist.controller.js"></script>
+    <script type="text/javascript" src="buginfo/buginfo.directive.js"></script>
+    <script type="text/javascript" src="buginfo/buginfo.controller.js"></script>
 
 </head>
 <body ng-app="davebug">
@@ -60,99 +64,7 @@
                 <span class="column-header-text">BUG TEXT</span>
             </div>
             <div id='bug-container'>
-                <div id='bug-info'>
-                    <!-- Every *-text will eventually be an input that is data-bound -->
-                    <div id='bug-title'>Title goes here</div>
-                    <div id='bug-description'>Description:
-                        <div id='bug-description-text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-                    </div>
-                    <div id='bug-reprosteps'>Reproduction Steps
-                        <div id='bug-reprosteps-text'>
-                            <ol>
-                                <!-- These <li>'s will be ng-repeated based on a repro steps array in the bug -->
-                                <li>Launch the application.</li>
-                                <li>From the homepage, select the <i>Tables</i> tab.</li>
-                                <li>Enter a random string into the <i>Search</i> field, then press [Enter].</li>
-                            </ol>
-                        </div>
-                    </div>
-                    <div id='bug-observed'>Observed Behavior
-                        <div id='bug-observed-text'>After pressing [Enter] in the search field, the assetLoader div does not appear.</div>
-                    </div>
-                    <div id='bug-expected'>Expected Results
-                        <div id='bug-expected-text'>After pressing [Enter] in the search field, the assetLoader div should appear.</div>
-                    </div>
-                    <div id='bug-notes'>Notes
-                        <div id='bug-notes-text'>
-                            <ol>
-                                <!-- These <li>'s will be ng-repeated based on a notes array in the bug -->
-                                <li>This issue also occurs on the Contacts, Orders, and Models tables.</li>
-                            </ol>
-                        </div>
-                    </div>
-                    <div id='bug-attachments'>Attachments
-                        <div id='bug-attachments-text'>
-                            <ol>
-                                <!-- These <li>'s will be ng-repeated based on an attachments array in the bug -->
-                                <!-- The attachments may have to be stored using GridFS, since an entire document is limited to 16 MB -->
-                                <li><a href="#">logfile.txt</a></li>
-                                <li><a href="#">screenshot.png</a></li>
-                            </ol>
-                        </div>
-                    </div>
-                    <div id='bug-comments'>Comments
-                        <!-- This should be a nested list that is ng-repeated based on a comments document.  Still need to think this one out -->
-                        <div id='bug-comments-text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-                    </div>
-                </div>
-                <div id='bug-metadata'>
-                    <div id='bug-id' class="metadata">ID
-                        <!-- This should stay immutable -->
-                        <div id='bug-id-text' class="metadata-text">00003</div>
-                    </div>
-                    <div id='bug-status' class="metadata">Status
-                        <!-- This will be a data-bound select -->
-                        <div id='bug-status-text' class="metadata-text">Closed</div>
-                    </div>
-                    <div id='bug-createddate' class="metadata">Created Date
-                        <!-- This should stay immutable -->
-                        <div id='bug-createddate-text' class="metadata-text">2017-11-05</div>
-                    </div>
-                    <div id='bug-createdby' class="metadata">Created By
-                        <!-- This should stay immutable -->
-                        <div id='bug-createdby-text' class="metadata-text">David Lloyd</div>
-                    </div>
-                    <div id='bug-severity' class="metadata">Severity
-                        <!-- This will be a data-bound select -->
-                        <div id='bug-severity-text' class="metadata-text">Low</div>
-                    </div>
-                    <div id='bug-priority' class="metadata">Priority
-                        <!-- This will be a data-bound select -->
-                        <div id='bug-priority-text' class="metadata-text">Medium</div>
-                    </div>
-                    <div id='bug-resolution' class="metadata">Resolution
-                        <!-- This will be a data-bound select -->
-                        <div id='bug-resolution-text' class="metadata-text">Fixed</div>
-                    </div>
-                    <!-- This will be a list of changes made with the username of the editor and datetime -->
-                    <!-- Could be implemented with an array of timeline objects in each bug -->
-                    <div id='bug-timeline' class="metadata">Timeline goes here</div>
-                </div>
+                <buginfo ng-controller="BuginfoController"></buginfo>
             </div>
         </div>
     </div>

@@ -1,0 +1,77 @@
+<div id='bug-info'>
+    <!-- Every *-text will eventually be an input that is data-bound -->
+    <div id='bug-title'>{{ activebug.bug_title }}</div>
+    <div id='bug-description'>Description:
+        <div id='bug-description-text' ng-bind-html="activebug.bug_description"></div>
+    </div>
+    <div id='bug-reprosteps'>Reproduction Steps:
+        <div id='bug-reprosteps-text'>
+            <ol>
+                <li ng-repeat="repro in activebug.bug_reproduction_steps">{{ repro }}</li>
+            </ol>
+        </div>
+    </div>
+    <div id='bug-observed'>Observed Behavior:
+        <div id='bug-observed-text'>{{ activebug.bug_observed_results }}</div>
+    </div>
+    <div id='bug-expected'>Expected Results:
+        <div id='bug-expected-text'>{{ activebug.bug_expected_results }}</div>
+    </div>
+    <div id='bug-notes'>Notes:
+        <div id='bug-notes-text'>
+            <ol>
+                <li ng-repeat="note in activebug.bug_notes">{{ note }}</li>
+            </ol>
+        </div>
+    </div>
+    <div id='bug-attachments'>Attachments:
+        <div id='bug-attachments-text'>
+            <ol>
+                <!-- These <li>'s will be ng-repeated based on an attachments array in the bug -->
+                <!-- The attachments may have to be stored using GridFS, since an entire document is limited to 16 MB -->
+                <li ng-repeat="attachment in activebug.bug_attachments"><a href="#">{{ attachment }}</a></li>
+            </ol>
+        </div>
+    </div>
+    <div id='bug-comments'>Comments:
+        <!-- This should be a nested list that is ng-repeated based on a comments document.  Still need to think this one out -->
+        <div id='bug-comments-text'>
+            <ol>
+                <li ng-repeat="comment in activebug.bug_comments">{{ comment }}</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div id='bug-metadata'>
+    <div id='bug-id' class="metadata">ID:
+        <!-- This should stay immutable -->
+        <div id='bug-id-text' class="metadata-text">{{ activebug.bug_id }}</div>
+    </div>
+    <div id='bug-status' class="metadata">Status:
+        <!-- This will be a data-bound select -->
+        <div id='bug-status-text' class="metadata-text">{{ activebug.bug_status }}</div>
+    </div>
+    <div id='bug-createddate' class="metadata">Created Date:
+        <!-- This should stay immutable -->
+        <div id='bug-createddate-text' class="metadata-text">{{ activebug.bug_created_date | date }}</div>
+    </div>
+    <div id='bug-createdby' class="metadata">Created By:
+        <!-- This should stay immutable -->
+        <div id='bug-createdby-text' class="metadata-text">{{ activebug.bug_created_by }}</div>
+    </div>
+    <div id='bug-severity' class="metadata">Severity:
+        <!-- This will be a data-bound select -->
+        <div id='bug-severity-text' class="metadata-text">{{ activebug.bug_severity }}</div>
+    </div>
+    <div id='bug-priority' class="metadata">Priority:
+        <!-- This will be a data-bound select -->
+        <div id='bug-priority-text' class="metadata-text">{{ activebug.bug_priority }}</div>
+    </div>
+    <div id='bug-resolution' class="metadata">Resolution:
+        <!-- This will be a data-bound select -->
+        <div id='bug-resolution-text' class="metadata-text">{{ activebug.bug_resolution }}</div>
+    </div>
+    <!-- This will be a list of changes made with the username of the editor and datetime -->
+    <!-- Could be implemented with an array of timeline objects in each bug -->
+    <div id='bug-timeline' class="metadata">Timeline goes here</div>
+</div>
