@@ -4,16 +4,18 @@
   angular.module('davebug')
     .factory('bugService', ['$http',
       function bugService($http) {
-        return {
-          getBuglist: getBuglist,
-          getActiveBug: getActiveBug,
-          setActiveBug: setActiveBug
-        };
-
+        var activebug = {};
+        var buglist = [];
+        console.log('buglist: ', buglist);
+        
         function getBuglist() {
           return $http.get('/json-data/list-of-bugs.json')
             .then(function getBuglistCompleted(response) {
-              return response.data;
+              buglist = response.data;
+              console.log('buglist in getBuglist: ', buglist);
+              activebug = buglist[0];
+              console.log('activebug in getBuglist: ', activebug);
+              return buglist;
             })
             .catch(function getBuglistFailed(error) {
               console.error(error);
@@ -21,21 +23,32 @@
         }
 
         function getActiveBug() {
-          return $http.get('/json-data/list-of-bugs.json')
-            .then(function getActiveBugCompleted(response) {
-              var results = response.data.filter(function(obj) {
-                return obj.active === true;
-              })[0];
-              return results;
-            })
-            .catch(function getActiveBugFailed(error) {
-              console.error(error);
-            });
+          console.log('activebug in getActiveBug: ', activebug);
+          return activebug;
         }
 
-        function setActiveBug() {
-          console.log('setActiveBug executed');
+        function setActiveBug(bugID) {
+          console.log('setActiveBug executed with ID: ', bugID);
+          activebug = {};
+          for (var i = 0; i < buglist.length; i++) {
+            buglist[i].active = false;
+          }
+
+          var bugToActivate = buglist.filter(function(obj) {
+            return obj.bug_id === bugID;
+          })[0];
+
+          bugToActivate.active = true;
+
+          activebug = bugToActivate;
+          console.log('activebug: ', activebug);
         }
+
+        return {
+          getBuglist: getBuglist,
+          getActiveBug: getActiveBug,
+          setActiveBug: setActiveBug
+        };
       }
     ]);
 })();

@@ -4,22 +4,22 @@
   angular.module('davebug')
     .controller('BuginfoController', ['$scope', 'bugService',
       function BuginfoController($scope, bugService) {
-        $scope.activebug = {};
+        $scope.activebug = bugService.getActiveBug();
+        console.log('$scope.activebug in BuginfoController: ', $scope.activebug);
+        console.log('bugService.getActiveBug in BuginfoController: ', bugService.getActiveBug());
 
-        activate();
+        // activate();
 
-        function activate() {
-          return getActiveBug().then(function() {
-            console.log('BuginfoController activated');
-          });
-        }
+        // function activate() {
+        //   return getActiveBug();
+        // }
 
-        function getActiveBug() {
-          return bugService.getActiveBug().then(function(data) {
-            $scope.activebug = data;
-            return $scope.activebug;
-          });
-        }
+        // function getActiveBug() {
+        //   return bugService.getActiveBug().then(function(data) {
+        //     $scope.activebug = data;
+        //     return $scope.activebug;
+        //   });
+        // }
       }
     ]);
 })();

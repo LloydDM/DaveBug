@@ -6,6 +6,7 @@
       function BuglistController($scope, $http, bugService) {
         $scope.statusFilter = '';
         $scope.bugs = [];
+        $scope.activebug = {};
 
         activate();
 
@@ -18,14 +19,17 @@
         function getBugs() {
           return bugService.getBuglist().then(function(data) {
             $scope.bugs = data;
-            return $scope.bugs;
+            $scope.activebug = bugService.getActiveBug();
+            return $scope.bugs, $scope.activebug;
           });
         }
 
-        $scope.setActive = function setActive() {
-          console.log('trying to call setActiveBug');
-          bugService.setActiveBug();
-        }
+        $scope.setActive = function setActive(bugID) {
+          console.log('trying to call setActiveBug with ID: ', bugID);
+          bugService.setActiveBug(bugID);
+          $scope.activebug = bugService.getActiveBug();
+          console.log('$scope.activebug in setActive: ', $scope.activebug);
+        };
       }
     ]);
 })();
