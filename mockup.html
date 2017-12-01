@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Proportions for DaveBug</title>
+    <title>DaveBug</title>
     
     <!-- CSS Links -->
     <link rel="stylesheet" type="text/css" href="shared/css/davebug-main.css">
@@ -10,12 +10,15 @@
     <link rel="stylesheet" type="text/css" href="shared/css/davebug-bug.css">
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
     
-    <!-- Angular Link -->
+    <!-- Angular Links -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
     
     <!-- JS Links -->
     <script type="text/javascript" src="core/davebug.module.js"></script>
+    <script type="text/javascript" src="core/davebug.config.js"></script>
     <script type="text/javascript" src="bug-service/bug-service.js"></script>
     <script type="text/javascript" src="buglist/buglist.directive.js"></script>
     <script type="text/javascript" src="buglist/buglist.controller.js"></script>
@@ -63,9 +66,7 @@
             <div class="column-header">
                 <span class="column-header-text">BUG TEXT</span>
             </div>
-            <div id='bug-container'>
-                <buginfo ng-controller="BuginfoController"></buginfo>
-            </div>
+            <div id='bug-container' ng-view></div>
         </div>
     </div>
 </body>

@@ -2,24 +2,18 @@
   'use strict';
 
   angular.module('davebug')
-    .controller('BuginfoController', ['$scope', 'bugService',
-      function BuginfoController($scope, bugService) {
-        $scope.activebug = bugService.getActiveBug();
-        console.log('$scope.activebug in BuginfoController: ', $scope.activebug);
-        console.log('bugService.getActiveBug in BuginfoController: ', bugService.getActiveBug());
+    .controller('BuginfoController', ['$scope', '$http', '$routeParams', '$window', 'bugService',
+      function BuginfoController($scope, $http, $routeParams, $window, bugService) {
 
-        // activate();
+        activate();
 
-        // function activate() {
-        //   return getActiveBug();
-        // }
-
-        // function getActiveBug() {
-        //   return bugService.getActiveBug().then(function(data) {
-        //     $scope.activebug = data;
-        //     return $scope.activebug;
-        //   });
-        // }
+        function activate() {
+          return $http.get('/json-data/list-of-bugs.json').then(function (response) {
+            $scope.activebug = response.data.filter(obj => obj.bug_id === Number($routeParams.bug_id))[0];
+            $window.document.title = "Davebug - Bug #" + $routeParams.bug_id + ": " + $scope.activebug["bug_title"];
+            bugService.setActiveBug(Number($routeParams.bug_id));
+          });
+        }
       }
     ]);
 })();

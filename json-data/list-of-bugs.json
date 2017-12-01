@@ -1,6 +1,6 @@
 [
   {
-    "active": true,
+    "active": false,
     "bug_id": 1,
     "bug_title": "This bug is open.  It is bug 00001",
     "bug_status": "Open",

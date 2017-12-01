@@ -1,5 +1,5 @@
 (function () {
   'use strict';
 
-  angular.module('davebug', ['ngSanitize']);
+  angular.module('davebug', ['ngRoute', 'ngSanitize', 'ngAnimate']);
 })();

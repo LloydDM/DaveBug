@@ -5,7 +5,8 @@
     .directive('buginfo', function buginfo() {
       return {
         restrict: 'E',
-        templateUrl: 'buginfo/buginfo.template.html'
+        templateUrl: 'buginfo/buginfo.template.html',
+        controller: 'BuginfoController'
       };
     });
 })();

@@ -6,11 +6,15 @@
 </div>
 
 <div id="buglist-list">
-    <div ng-repeat="bug in bugs | filter:{bug_status:statusFilter}" class="buglist-item button rect-button" ng-class="{'open-showstopper': bug.bug_severity === 'Showstopper' && bug.bug_status === 'Open', 'closed-showstopper': bug.bug_severity === 'Showstopper' && bug.bug_status === 'Closed', 'active-bug': bug.active === true}" ng-click="setActive(bug.bug_id)">
-        <div class="buglist-item-tagline" ng-class="{'open-bug': bug.bug_status === 'Open', 'closed-bug': bug.bug_status === 'Closed'}">
-            <span class="buglist-item-id">{{ bug.bug_id }}</span>
-            <span class="buglist-item-date">{{ bug.bug_created_date | date }}</span>
+    <a ng-repeat="bug in bugs | filter:{bug_status:statusFilter}" href="/#!/bugs/{{ bug.bug_id }}" class="buglist-anchor">
+        <div class="buglist-item button rect-button" ng-class="{'open-showstopper': bug.bug_severity === 'Showstopper' && bug.bug_status === 'Open', 'closed-showstopper': bug.bug_severity === 'Showstopper' && bug.bug_status === 'Closed', 'active-bug': bug.active === true}" ng-click="setActive(bug.bug_id)">
+            
+            <div class="buglist-item-tagline" ng-class="{'open-bug': bug.bug_status === 'Open', 'closed-bug': bug.bug_status === 'Closed'}">
+                <span class="buglist-item-id">{{ bug.bug_id }}</span>
+                <span class="buglist-item-date">{{ bug.bug_created_date | date }}</span>
+            </div>
+            <div class="buglist-item-title">{{ bug.bug_title }}</div>
+            
         </div>
-        <div class="buglist-item-title">{{ bug.bug_title }}</div>
-    </div>
+    </a>
 </div>

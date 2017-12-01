@@ -140,6 +140,22 @@
   color: #373;
 }
 
+.buglist-anchor:link {
+  /* Size and Position */
+  
+  /* Styling */
+  text-decoration: inherit;
+  color: inherit;
+}
+
+.buglist-anchor:visited {
+  /* Size and Position */
+  
+  /* Styling */
+  text-decoration: inherit;
+  color: inherit;
+}
+
 .buglist-item {
   /* Size and Position */
   height: 120px;
